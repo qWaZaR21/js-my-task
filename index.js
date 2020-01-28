@@ -10,7 +10,7 @@ function combination(str) {
 
   result.push(array.toString());
 
-  let count = factorial(array.length);
+  let count = factorial(length);
 
   while (count-1 > 0) {
     
@@ -21,16 +21,15 @@ function combination(str) {
     } else {
       secondFlag = firstFlag+1;
     }
-    console.log("ff=" + firstFlag + "; sf=" + secondFlag + "; arr=" + array + "; length=" + array.length + ";")
+
     swap(array, firstFlag, secondFlag);
     
-
     if (firstFlag + 2 !== array.length) {
       array = reverse(array, firstFlag);
     }
+    
     result.push(array.toString());
     count--;
-
   }
 }
 
@@ -45,6 +44,7 @@ function findFirstFlag(array) {
       firstFlag = i;
     }
   }
+
   return firstFlag;
 }
 
@@ -55,6 +55,7 @@ function findSecondFlag(array, firstFlag) {
       secondFlag = i;
     }
   }
+
   return secondFlag;
 }
 
@@ -72,15 +73,16 @@ function reverse(array, firstFlag) {
   reverseArray = array.slice(firstFlag+1, array.length).reverse();
   array.splice(firstFlag+1, array.length-firstFlag+1);
   array = array.concat(reverseArray);
+
   return(array);
 }
 
 
-
-
 let result = [];
 let str = "ь1$k8L";
+
 combination(str);
+
 console.log(result);
 
 
