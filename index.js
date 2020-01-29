@@ -79,7 +79,7 @@ function reverse(array, firstFlag) {
 
 
 let result = [];
-let str = "ь1$k8L";
+let str = "test";
 
 combination(str);
 
